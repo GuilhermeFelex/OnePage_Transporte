@@ -3,8 +3,8 @@ import { Phone, Mail, MessageCircle, Truck } from 'lucide-react'; // Using Messa
 
 const phoneNumber = "+5511999998888"; // REPLACE with actual phone
 const whatsappNumber = "+5511999998888"; // REPLACE with actual WhatsApp number (including country code)
-const emailAddress = "contato@cargaflex.com.br"; // REPLACE with actual email
-const companyName = "CargaFlex Transportes Ltda."; // REPLACE with actual company name
+const emailAddress = "contato@transnovag.com.br"; // REPLACE with actual email
+const companyName = "TransnovaG Transportes Ltda."; // REPLACE with actual company name
 const cnpj = "00.000.000/0001-00"; // REPLACE with actual CNPJ if applicable
 
 export function Footer() {
@@ -18,7 +18,7 @@ export function Footer() {
           <div>
             <a href="#inicio" className="flex items-center justify-center md:justify-start gap-2 text-xl font-bold mb-4">
               <Truck className="h-7 w-7 text-accent" />
-              <span>CargaFlex</span>
+              <span>TransnovaG</span>
             </a>
             <p className="text-sm">{companyName}</p>
             {cnpj && <p className="text-sm">CNPJ: {cnpj}</p>}

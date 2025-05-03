@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CargaFlex - Transporte de Carga Grande",
+  title: "TransnovaG - Transporte de Carga Grande",
   description: "Serviços eficientes e confiáveis para entrega de carga grande.",
 };
 

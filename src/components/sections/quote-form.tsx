@@ -29,8 +29,8 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 
 // Email configuration
-const recipientEmail = "orcamentos@cargaflex.com.br"; // REPLACE with your actual email
-const emailSubject = "Solicitação de Cotação de Frete - CargaFlex";
+const recipientEmail = "orcamentos@transnovag.com.br"; // REPLACE with your actual email
+const emailSubject = "Solicitação de Cotação de Frete - TransnovaG";
 
 export function QuoteForm() {
   const { toast } = useToast();

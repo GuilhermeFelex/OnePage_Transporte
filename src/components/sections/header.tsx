@@ -21,7 +21,7 @@ export function Header() {
       {/* Background Image */}
       <Image
         src="https://picsum.photos/1600/900"
-        alt="Caminhões CargaFlex"
+        alt="Caminhões TransnovaG"
         layout="fill"
         objectFit="cover"
         quality={80}
@@ -40,7 +40,7 @@ export function Header() {
           {/* Logo */}
           <a href="#inicio" className="flex items-center gap-2 text-2xl font-bold">
              <Truck className="h-8 w-8 text-accent" />
-             <span>CargaFlex</span>
+             <span>TransnovaG</span>
           </a>
 
           {/* Desktop Menu */}
@@ -68,7 +68,7 @@ export function Header() {
               <SheetHeader className="mb-6">
                 <SheetTitle className="flex items-center gap-2 text-xl font-bold text-primary-foreground">
                    <Truck className="h-7 w-7 text-accent" />
-                   CargaFlex
+                   TransnovaG
                 </SheetTitle>
                 {/* Optional Description */}
                 {/* <SheetDescription>Navegação</SheetDescription> */}
@@ -98,13 +98,13 @@ export function Header() {
 
         {/* Hero Content */}
         <div className="flex-grow flex flex-col justify-center items-center text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight animate-fade-in-up">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
             Transporte de Carga Grande com Eficiência e Segurança
           </h1>
-          <p className="text-lg md:text-xl mb-8 max-w-2xl animate-fade-in-up animation-delay-200">
+          <p className="text-lg md:text-xl mb-8 max-w-2xl">
             Sua solução completa para fretes de grande porte em todo o Brasil.
           </p>
-          <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-400" asChild>
+          <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90" asChild>
             <a href="#cotacao">
               Solicitar Cotação Agora
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -114,24 +114,11 @@ export function Header() {
 
         {/* Social Proof */}
         <div className="text-center pb-4">
-          <p className="text-lg font-semibold animate-fade-in animation-delay-600">+55K VIAGENS FEITAS COM SUCESSO</p>
+          <p className="text-lg font-semibold">+55K VIAGENS FEITAS COM SUCESSO</p>
         </div>
       </div>
-       {/* Add simple fade-in animation styles */}
+       {/* Responsive height adjustments */}
        <style jsx>{`
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in-up {
-          animation: fadeInUp 0.6s ease-out forwards;
-          opacity: 0; /* Start hidden */
-        }
-         .animation-delay-200 { animation-delay: 0.2s; }
-         .animation-delay-400 { animation-delay: 0.4s; }
-         .animation-delay-600 { animation-delay: 0.6s; }
-
-         /* Responsive height adjustments */
         @media (max-width: 767px) {
             header { height: 70vh; }
         }

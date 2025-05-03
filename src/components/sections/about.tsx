@@ -10,7 +10,7 @@ export function AboutUs() {
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Sobre Nós</h2>
             <p className="text-lg mb-4 text-foreground">
-              A CargaFlex é especialista em transporte rodoviário de cargas de grande porte. Com anos de experiência no mercado, garantimos a entrega segura e pontual da sua mercadoria em todo o território nacional.
+              A TransnovaG é especialista em transporte rodoviário de cargas de grande porte. Com anos de experiência no mercado, garantimos a entrega segura e pontual da sua mercadoria em todo o território nacional.
             </p>
             <p className="text-lg mb-4 text-foreground">
               Nossa frota moderna e equipe qualificada estão prontas para atender às suas necessidades logísticas mais complexas, oferecendo soluções personalizadas e eficientes.
@@ -24,7 +24,7 @@ export function AboutUs() {
                 <CardContent className="p-0">
                     <Image
                         src="https://picsum.photos/600/400"
-                        alt="Equipe ou Sede CargaFlex"
+                        alt="Equipe ou Sede TransnovaG"
                         width={600}
                         height={400}
                         objectFit="cover"
