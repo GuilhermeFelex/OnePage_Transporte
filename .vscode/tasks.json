@@ -1,0 +1,37 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Dev Server",
+      "type": "npm",
+      "script": "dev",
+      "problemMatcher": [],
+      "detail": "next dev --turbopack -p 9002",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Build Project",
+      "type": "npm",
+      "script": "build",
+      "problemMatcher": [],
+      "detail": "next build"
+    },
+    {
+      "label": "Start Production Server",
+      "type": "npm",
+      "script": "start",
+      "problemMatcher": [],
+      "detail": "next start"
+    },
+    {
+      "label": "Lint Project",
+      "type": "npm",
+      "script": "lint",
+      "problemMatcher": ["$next-eslint"],
+      "detail": "next lint"
+    }
+  ]
+}
