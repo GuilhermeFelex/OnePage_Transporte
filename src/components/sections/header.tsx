@@ -1,31 +1,30 @@
+
 "use client";
 
 import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Truck } from 'lucide-react';
+import { ArrowRight, Menu, Truck, X } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
   SheetClose,
-} from "@/components/ui/sheet";
-import { Menu } from 'lucide-react'; // Import Menu icon for mobile trigger
+  SheetHeader,
+  SheetTitle,
+} from '@/components/ui/sheet';
 
 export function Header() {
   return (
-    <header id="inicio" className="relative h-[60vh] md:h-[80vh] text-white flex flex-col">
+    <header id="inicio" className="relative min-h-[70vh] md:min-h-[80vh] text-white flex flex-col">
       {/* Background Image */}
       <Image
-        src="https://picsum.photos/1600/900"
+        src="https://placehold.co/1600x900.png"
         alt="Caminhões TransnovaG"
         layout="fill"
         objectFit="cover"
         quality={80}
-        priority // Add priority to LCP image
+        priority
         className="absolute inset-0 z-0 brightness-50"
         data-ai-hint="trucks highway"
       />
@@ -49,59 +48,60 @@ export function Header() {
             <a href="#servicos" className="hover:text-accent transition-colors">Serviços</a>
             <a href="#avaliacoes" className="hover:text-accent transition-colors">Avaliações</a>
             <a href="#rotas" className="hover:text-accent transition-colors">Rotas</a>
-            {/* Removed Contato link as it duplicates footer info and quote form purpose */}
-            {/* <a href="#contato" className="hover:text-accent transition-colors">Contato</a> */}
             <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground" size="sm" asChild>
               <a href="#cotacao">Solicitar Cotação</a>
             </Button>
           </nav>
 
-           {/* Mobile Menu Trigger using Sheet */}
-          <Sheet>
-            <SheetTrigger asChild className="md:hidden text-white focus:outline-none">
-               <Button variant="ghost" size="icon">
-                 <Menu className="h-6 w-6" />
-                 <span className="sr-only">Abrir Menu</span>
-               </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="bg-primary text-primary-foreground border-l border-primary-foreground/20 w-[250px] sm:w-[300px]">
-              <SheetHeader className="mb-6">
-                <SheetTitle className="flex items-center gap-2 text-xl font-bold text-primary-foreground">
-                   <Truck className="h-7 w-7 text-accent" />
-                   TransnovaG
-                </SheetTitle>
-                {/* Optional Description */}
-                {/* <SheetDescription>Navegação</SheetDescription> */}
-              </SheetHeader>
-              <nav className="flex flex-col space-y-4">
+          {/* Mobile Menu Trigger */}
+          <div className="md:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" aria-label="Abrir menu">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[350px] bg-background text-foreground p-6 flex flex-col">
+                <SheetHeader className="mb-4">
+                  <SheetTitle className="text-2xl font-bold text-primary flex items-center justify-between">
+                    Menu
+                    <SheetClose asChild>
+                       <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-primary" aria-label="Fechar menu">
+                         <X className="h-5 w-5" />
+                       </Button>
+                    </SheetClose>
+                  </SheetTitle>
+                </SheetHeader>
+                <nav className="flex flex-col space-y-4 flex-grow">
+                  <SheetClose asChild>
+                    <a href="#sobre" className="text-lg hover:text-accent transition-colors py-2 block">Sobre Nós</a>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <a href="#servicos" className="text-lg hover:text-accent transition-colors py-2 block">Serviços</a>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <a href="#avaliacoes" className="text-lg hover:text-accent transition-colors py-2 block">Avaliações</a>
+                  </SheetClose>
+                  <SheetClose asChild>
+                    <a href="#rotas" className="text-lg hover:text-accent transition-colors py-2 block">Rotas</a>
+                  </SheetClose>
+                </nav>
                 <SheetClose asChild>
-                  <a href="#sobre" className="hover:text-accent transition-colors py-2">Sobre Nós</a>
+                  <Button variant="default" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 mt-auto py-3 text-base" asChild>
+                    <a href="#cotacao">Solicitar Cotação</a>
+                  </Button>
                 </SheetClose>
-                <SheetClose asChild>
-                  <a href="#servicos" className="hover:text-accent transition-colors py-2">Serviços</a>
-                </SheetClose>
-                <SheetClose asChild>
-                  <a href="#avaliacoes" className="hover:text-accent transition-colors py-2">Avaliações</a>
-                </SheetClose>
-                <SheetClose asChild>
-                  <a href="#rotas" className="hover:text-accent transition-colors py-2">Rotas</a>
-                </SheetClose>
-                 <SheetClose asChild>
-                   <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground w-full mt-4" size="sm" asChild>
-                     <a href="#cotacao">Solicitar Cotação</a>
-                   </Button>
-                 </SheetClose>
-              </nav>
-            </SheetContent>
-          </Sheet>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
 
         {/* Hero Content */}
         <div className="flex-grow flex flex-col justify-center items-center text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 leading-tight">
             Transporte de Carga Grande com Eficiência e Segurança
           </h1>
-          <p className="text-lg md:text-xl mb-8 max-w-2xl">
+          <p className="text-base sm:text-lg md:text-xl mb-8 max-w-2xl">
             Sua solução completa para fretes de grande porte em todo o Brasil.
           </p>
           <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90" asChild>
@@ -114,13 +114,22 @@ export function Header() {
 
         {/* Social Proof */}
         <div className="text-center pb-4">
-          <p className="text-lg font-semibold">+55K VIAGENS FEITAS COM SUCESSO</p>
+          <p className="text-sm md:text-lg font-semibold">+55K VIAGENS FEITAS COM SUCESSO</p>
         </div>
       </div>
-       {/* Responsive height adjustments */}
        <style jsx>{`
-        @media (max-width: 767px) {
-            header { height: 70vh; }
+        @media (max-width: 767px) { /* md breakpoint */
+          header {
+             min-height: max(60vh, 450px); /* Ensure enough space for content on smaller viewports */
+          }
+          h1 {
+            font-size: 2rem; /* Adjusted h1 size for mobile */
+            line-height: 1.2;
+          }
+          .container > div:nth-child(2) p { /* Targeting hero paragraph */
+            font-size: 0.95rem; /* Adjusted paragraph size for mobile */
+            margin-bottom: 1.5rem;
+          }
         }
       `}</style>
     </header>
