@@ -1,7 +1,14 @@
 import type {NextConfig} from 'next';
 
+// ATENÇÃO: Substitua 'seu-repositorio' pelo nome real do seu repositório no GitHub.
+// Se você estiver fazendo deploy em `username.github.io` (sem subdiretório),
+// você pode definir REPO_NAME como uma string vazia ''.
+const REPO_NAME = 'seu-repositorio';
+
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: 'export', // Habilita a exportação estática
+  basePath: process.env.NODE_ENV === 'production' ? `/${REPO_NAME}` : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? `/${REPO_NAME}/` : '',
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -9,6 +16,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
+    unoptimized: true, // Necessário para exportação estática no GitHub Pages
     remotePatterns: [
       {
         protocol: 'https',
@@ -24,7 +32,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'via.placeholder.com', // Added for client logos if they use this
+        hostname: 'via.placeholder.com',
         port: '',
         pathname: '/**',
       }
